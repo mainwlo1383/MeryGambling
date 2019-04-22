@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bigo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <style>
+        .imgblock {
+            outline: 5px solid red;
+            transition: all 0;
+            /*     box-shadow: 0 0 2px red; */
+        }
+        
+        .imgblocknone {
+            transition: all .3s;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1 class="text-center mb-4">拉霸機</h1>
+    <center>
+        <table>
+            <tr>
+                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p0"></td>
+                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p1"></td>
+                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p2"></td>
+                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p3"></td>
+                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p4"></td>
+                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p5"></td>
+                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p6"></td>
+                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p7"></td>
+                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p8"></td>
+            </tr>
+
+            <tr>
+                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p21"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p9"></td>
+            </tr>
+            <tr>
+                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p20"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p10"></td>
+
+            </tr>
+            <tr>
+                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p19"></td>
+                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p18"></td>
+                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p17"></td>
+                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p16"></td>
+                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p15"></td>
+                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p14"></td>
+                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p13"></td>
+                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p12"></td>
+                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p11"></td>
+            </tr>
+        </table>
+        <button type="button" class="btn btn-dark " style="width:250px;">Go!</button>
+    </center>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <script>
+        var blocks = [];
+        var block;
+        var step;
+        var stop = 0;
+        var currstep = 0;
+        $(function init() {
+
+            var img = document.getElementsByTagName("img");
+
+            for (var i = 0; i <= img.length - 1; i++) {
+                var ids = document.getElementById("p" + i);
+
+                block = ids;
+
+                if (!block) {
+                    break;
+                }
+                blocks.push(block);
+
+            }
+            var firststep = Math.floor(Math.random() * blocks.length);
+            $("button").click(function() {
+                blocks[currstep].className = "mr-5 mb-5 imgblocknone"; //初始化
+
+                step = blocks.length;
+                step += firststep;
+                console.log(firststep);
+                blocks.className = "imgblock";
+                console.log(blocks);
+                currstep = 0;
+                run();
+            });
+
+            function run() {
+
+                blocks[currstep].className = "mr-5 mb-5 imgblocknone";
+                currstep++;
+                if (currstep > blocks.length - 1) {
+                    currstep = 0;
+                }
+                blocks[currstep].className = "mr-5 mb-5 imgblock";
+                if (step > 0) {
+                    step--;
+                    setTimeout(run, 95);
+                }
+            };
+        });
+    </script>
+
+</body>
+
+</html>
