@@ -1,135 +1,164 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>bigo</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <title>Slot</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
-        .imgblock {
-            outline: 5px solid red;
-            transition: all 0;
-            /*     box-shadow: 0 0 2px red; */
+        img {
+            border: 3px solid transparent;
+            height: 110px;
+            width: 80px;
         }
         
-        .imgblocknone {
+        .run {
+            border: 3px solid rgb(214, 44, 14);
             transition: all .3s;
+            box-sizing: border-box;
+            box-shadow: tomato;
+        }
+        
+        .run-none {
+            transition: all .8s;
         }
     </style>
-
 </head>
 
 <body>
-    <h1 class="text-center mb-4">拉霸機</h1>
-    <center>
-        <table>
-            <tr>
-                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p0"></td>
-                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p1"></td>
-                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p2"></td>
-                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p3"></td>
-                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p4"></td>
-                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p5"></td>
-                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p6"></td>
-                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p7"></td>
-                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p8"></td>
-            </tr>
+    <div class="container">
+        <h3 style="text-align: center;font-family:Microsoft JhengHei;margin-top:30px"><b>拉霸機</b></h3>
+        <div class="row mt-5">
+            <div class="col">
+                <img id="i1" src='https://img.tw.observer/images/DM6VNIH.jpg' alt='' />
+            </div>
+            <div class="col">
+                <img id="i2" src='https://img.tw.observer/images/vGu4Wje.jpg' alt='' />
+            </div>
+            <div class="col">
+                <img id="i3" src='https://img.tw.observer/images/YSHQg3i.jpg' alt='' />
+            </div>
+            <div class="col">
+                <img id="i4" src='https://img.tw.observer/images/rT0Pfvr.jpg' alt='' />
+            </div>
+            <div class="col">
+                <img id="i5" src='https://img.tw.observer/images/Xdg58wy.jpg' alt='' />
+            </div>
+            <div class="col">
+                <img id="i6" src='https://img.tw.observer/images/YNkCbAP.jpg' alt='' />
+            </div>
+            <div class="col">
+                <img id="i7" src='https://img.tw.observer/images/iCbyKR4.jpg' alt='' />
+            </div>
+            <div class="col">
+                <img id="i8" src='https://img.tw.observer/images/6iTCd3t.jpg' alt='' />
+            </div>
+            <div class="col">
+                <img id="i9" src='https://img.tw.observer/images/4jQCoq6.jpg' alt='' />
+            </div>
 
-            <tr>
-                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p21"></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p9"></td>
-            </tr>
-            <tr>
-                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p20"></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p10"></td>
+        </div>
 
-            </tr>
-            <tr>
-                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p19"></td>
-                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p18"></td>
-                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p17"></td>
-                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p16"></td>
-                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p15"></td>
-                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p14"></td>
-                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p13"></td>
-                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p12"></td>
-                <td><img src="http://placekitten.com/g/100/100" alt="" class="mr-5 mb-5" id="p11"></td>
-            </tr>
-        </table>
-        <button type="button" class="btn btn-dark " style="width:250px;">Go!</button>
-    </center>
+        <div class="row mt-4">
+            <div class="col">
+                <img id="i22" src='https://img.tw.observer/images/tMxmnn3.jpg' alt='' />
+            </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+            <div class="col text-right">
+                <img id="i10" src='https://img.tw.observer/images/MRrZ4sY.jpg' alt='' />
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">
+                <img id="i21" src='https://img.tw.observer/images/paodcNI.jpg' alt='' />
+            </div>
 
+            <div class="col text-right">
+                <img id="i11" src='https://img.tw.observer/images/7VCcVdW.jpg' alt='' />
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">
+                <img id="i20" src='https://img.tw.observer/images/7PgfxQv.jpg' alt='' />
+            </div>
+            <div class="col">
+                <img id="i19" src='https://img.tw.observer/images/bPNC5b1.jpg' alt='' />
+            </div>
+            <div class="col">
+                <img id="i18" src='https://img.tw.observer/images/Lw0yq59.jpg' alt='' />
+            </div>
+            <div class="col">
+                <img id="i17" src='https://img.tw.observer/images/3JVIqGZ.jpg' alt='' />
+            </div>
+            <div class="col">
+                <img id="i16" src='https://img.tw.observer/images/G4lZPP6.jpg' alt='' />
+            </div>
+            <div class="col">
+                <img id="i15" src='https://img.tw.observer/images/gvVSrDz.jpg' alt='' />
+            </div>
+            <div class="col">
+                <img id="i14" src='https://img.tw.observer/images/60ptECe.jpg' alt='' />
+            </div>
+            <div class="col">
+                <img id="i13" src='https://img.tw.observer/images/vYkCVWe.jpg' alt='' />
+            </div>
+            <div class="col">
+                <img id="i12" src='https://img.tw.observer/images/DsHTFUS.jpg' alt='' />
+            </div>
+
+        </div>
+        <div class="row mt-5">
+            <div class="col">
+                <button type="button" class="btn btn-danger btn-block" id="start">start</button>
+            </div>
+        </div>
+    </div>
     <script>
-        var blocks = [];
-        var block;
-        var step;
-        var stop = 0;
-        var currstep = 0;
-        $(function init() {
+        var img = document.getElementsByTagName("img");
+        var bricks = [];
+        var pushprick = 0;
+        var brick;
+        var first = Math.floor(Math.random() * bricks.length);
+        var steps = 0;
 
-            var img = document.getElementsByTagName("img");
-
-            for (var i = 0; i <= img.length - 1; i++) {
-                var ids = document.getElementById("p" + i);
-
-                block = ids;
-
-                if (!block) {
-                    break;
-                }
-                blocks.push(block);
-
+        for (var j = 1; j <= img.length; j++) {
+            brick = document.getElementById("i" + j);
+            if (!brick) {
+                break;
             }
-            var firststep = Math.floor(Math.random() * blocks.length);
-            $("button").click(function() {
-                blocks[currstep].className = "mr-5 mb-5 imgblocknone"; //初始化
+            bricks.push(brick);
+        }
+        console.log(bricks);
 
-                step = blocks.length;
-                step += firststep;
-                console.log(firststep);
-                blocks.className = "imgblock";
-                console.log(blocks);
-                currstep = 0;
-                run();
-            });
+        document.getElementById("start").onclick = function() {
+            steps = 30 + Math.floor(Math.random() * 10);
+            console.log(steps);
+            bricks[first].className = "run";
+            run();
+        }
 
-            function run() {
-
-                blocks[currstep].className = "mr-5 mb-5 imgblocknone";
-                currstep++;
-                if (currstep > blocks.length - 1) {
-                    currstep = 0;
-                }
-                blocks[currstep].className = "mr-5 mb-5 imgblock";
-                if (step > 0) {
-                    step--;
-                    setTimeout(run, 95);
-                }
-            };
-        });
+        function run() {
+            bricks[first].className = "run-none";
+            first++;
+            if (first > bricks.length - 1) {
+                first = 0;
+            }
+            bricks[first].className = "run";
+            if (steps > 0) {
+                steps--;
+                setTimeout(run, 95);
+            }
+        }
     </script>
-
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>
